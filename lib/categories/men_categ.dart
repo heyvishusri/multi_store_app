@@ -9,12 +9,12 @@ import 'package:multi_store_app/utilities/categ_list.dart';
 
 // ];
 
-List<String> labeltry= [
-  'Shirt',
-  'Pants',
-  'Shoes',
-  'jeans',
-];
+// List<String> labeltry= [
+//   'Shirt',
+//   'Pants',
+//   'Shoes',
+//   'jeans',
+// ];
 class MenCategory extends StatelessWidget {
   const MenCategory({Key? key}) : super(key: key);
 
