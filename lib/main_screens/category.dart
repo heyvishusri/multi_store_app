@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/categories/men_categ.dart';
 import 'package:multi_store_app/main_screens/home.dart';
 
 
@@ -114,7 +115,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 },
                 scrollDirection: Axis.vertical,
                 children: const[
-                Center(child: Text('men category')),
+                MenCategory(),
                 Center(child: Text('women category')),
                 Center(child: Text('shoes category')),
                 Center(child: Text('bags category')),
