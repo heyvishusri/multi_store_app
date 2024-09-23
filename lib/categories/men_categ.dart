@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:multi_store_app/minor_screens/subcateg_products.dart';
 import 'package:multi_store_app/utilities/categ_list.dart';
+import 'package:multi_store_app/widgets/categ_widgets.dart';
 
 class MenCategory extends StatelessWidget {
   const MenCategory({Key? key}) : super(key: key);
@@ -43,114 +43,14 @@ class MenCategory extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-              bottom: 0,
-              right: 0,
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.8,
-                width: MediaQuery.of(context).size.width * 0.05,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 40),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.brown.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(50)),
-                    child: RotatedBox(
-                      quarterTurns: 3,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          const Text(
-                            '<<',
-                            style: TextStyle(
-                                color: Colors.brown,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 10),
-                          ),
-                          Text(
-                            'men'.toUpperCase(),
-                            style: const TextStyle(
-                                color: Colors.brown,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 10),
-                          ),
-                          const Text(
-                            '>>',
-                            style: TextStyle(
-                                color: Colors.brown,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 10),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ))
-        ],
-      ),
-    );
-  }
-}
-
-class SubcategModel extends StatelessWidget {
-  final String mainCategName;
-  final String subcategName;
-  final String assetName;
-  final String subCategLabel;
-
-  const SubcategModel({
-    Key? key,
-    required this.mainCategName,
-    required this.subcategName,
-    required this.assetName,
-    required this.subCategLabel,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => SubCategProducts(
-                      maincategName: mainCategName,
-                      subcategName: subcategName,
-                    )));
-      },
-      child: Column(
-        children: [
-          SizedBox(
-            height: 70,
-            width: 70,
-            child: Image(
-              image: AssetImage(assetName),
+          const Positioned(
+            bottom: 0,
+            right: 0,
+            child: SliderBar(
+              maincategName: 'men',
             ),
           ),
-          Text(subCategLabel)
         ],
-      ),
-    );
-  }
-}
-
-class CategHeaderLabel extends StatelessWidget {
-  final String headerLabel;
-  const CategHeaderLabel({Key? key, required this.headerLabel})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(30.0),
-      child: Text(
-        headerLabel,
-        style: const TextStyle(
-            fontSize: 24, fontWeight: FontWeight.bold, letterSpacing: 1.5),
       ),
     );
   }
