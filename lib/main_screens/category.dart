@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/categories/accessories_categ.dart';
 import 'package:multi_store_app/categories/bags_categ.dart';
+import 'package:multi_store_app/categories/beauty_categ.dart';
+import 'package:multi_store_app/categories/electro_categ.dart';
+import 'package:multi_store_app/categories/home_garden_categ.dart';
+import 'package:multi_store_app/categories/kids_categ.dart';
 import 'package:multi_store_app/categories/men_categ.dart';
 import 'package:multi_store_app/categories/shoes_categ.dart';
 import 'package:multi_store_app/categories/women_categ.dart';
@@ -103,11 +108,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
             WomenCategory(),
             ShoesCategory(),
             BagsCategory(),
-            Center(child: Text('electronics category')),
-            Center(child: Text('accessories category')),
-            Center(child: Text('home & garden category')),
-            Center(child: Text('kids category')),
-            Center(child: Text('beauty category')),
+            ElectroCategory(),
+            AccessoriesCategory(),
+            HomeandGardenCategory(),
+            KidsCategory(),
+            BeautyCategory(),
           ],
         ));
   }
