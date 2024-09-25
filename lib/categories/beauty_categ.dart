@@ -28,7 +28,7 @@ class BeautyCategory extends StatelessWidget {
                     child: GridView.count(
                       mainAxisSpacing: 70,
                       crossAxisSpacing: 15,
-                      crossAxisCount: 3,
+                      crossAxisCount: 2,
                       children: List.generate(beauty.length, (index) {
                         return SubcategModel(
                           mainCategName: 'beauty',

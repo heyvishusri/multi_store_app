@@ -110,7 +110,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             BagsCategory(),
             ElectroCategory(),
             AccessoriesCategory(),
-            HomeandGardenCategory(),
+            HomeGardenCategory(),
             KidsCategory(),
             BeautyCategory(),
           ],

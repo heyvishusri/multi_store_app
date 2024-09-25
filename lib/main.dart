@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multi_store_app/main_screens/customer_home.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
@@ -16,4 +16,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

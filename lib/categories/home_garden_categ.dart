@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:multi_store_app/utilities/categ_list.dart';
 import 'package:multi_store_app/widgets/categ_widgets.dart';
 
-class HomeandGardenCategory extends StatelessWidget {
-  const HomeandGardenCategory({Key? key}) : super(key: key);
+class HomeGardenCategory extends StatelessWidget {
+  const HomeGardenCategory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class HomeandGardenCategory extends StatelessWidget {
                       crossAxisCount: 3,
                       children: List.generate(homeandgarden.length, (index) {
                         return SubcategModel(
-                          mainCategName: 'homegarden',
+                          mainCategName: 'homeandgarden',
                           subcategName: homeandgarden[index],
                           assetName: 'images/homegarden/home$index.jpg',
                           subCategLabel: homeandgarden[index],
@@ -47,7 +47,7 @@ class HomeandGardenCategory extends StatelessWidget {
             bottom: 0,
             right: 0,
             child: SliderBar(
-              maincategName: 'homeandgarden',
+              maincategName: 'Home & Garden',
             ),
           ),
         ],

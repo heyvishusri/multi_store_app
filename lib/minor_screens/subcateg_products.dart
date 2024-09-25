@@ -25,7 +25,7 @@ class SubCategProducts extends StatelessWidget {
         ),
         title: Text(
           subcategName,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black, fontFamily: 'Acme'),
         ),
       ),
       body: Center(
