@@ -10,7 +10,7 @@ class StoresScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: const AppbarTitle(
+        title: const AppBarTitle(
           title: 'Stores',
         ),
       ),

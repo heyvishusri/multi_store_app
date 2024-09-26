@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/main_screens/customer_home.dart';
 import 'package:multi_store_app/widgets/appbar_widgets.dart';
 import 'package:multi_store_app/widgets/yellow_button.dart';
 
@@ -23,7 +24,7 @@ class CartScreen extends StatelessWidget {
             ],
             elevation: 0,
             backgroundColor: Colors.white,
-            title: const AppbarTitle(
+            title: const AppBarTitle(
               title: 'Cart',
             ),
           ),
@@ -47,10 +48,11 @@ class CartScreen extends StatelessWidget {
                   child: MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.5,
                     onPressed: () {
-                      Navigator.canPop(context)
-                          ? Navigator.pop(context)
-                          : Navigator.pushReplacementNamed(
-                              context, '/customer_home');
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomerHomeScreen()),
+                      );
                     },
                     child: const Text(
                       'Contiue Shopping',
@@ -66,8 +68,8 @@ class CartScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Text(
                       'Total: \$ ',
                       style: TextStyle(fontSize: 18),

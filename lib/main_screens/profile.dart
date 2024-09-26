@@ -109,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => const CartScreen(
-                                              back: AppbarBackButton(),
+                                              back: AppBarBackButton(),
                                             )));
                               },
                             ),
@@ -186,8 +186,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(16)),
-                              child: Column(
-                                children: const [
+                              child: const Column(
+                                children: [
                                   RepeatedListTile(
                                       icon: Icons.email,
                                       subTitle: 'example@email.com',
@@ -195,12 +195,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   YellowDivider(),
                                   RepeatedListTile(
                                       icon: Icons.phone,
-                                      subTitle: '+11111',
+                                      subTitle: '+91',
                                       title: 'Phone No.'),
                                   YellowDivider(),
                                   RepeatedListTile(
                                       icon: Icons.location_pin,
-                                      subTitle: 'example: 140 - st - New Gersy',
+                                      subTitle:
+                                          'example: 360020 - RJ - Gujarat',
                                       title: 'Address'),
                                 ],
                               ),
@@ -234,8 +235,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     title: 'Log Out',
                                     icon: Icons.logout,
                                     onPressed: () {
-                                      Navigator.pushReplacementNamed(
-                                          context, '/welcome_screen');
+                                      // Navigator.pushReplacementNamed(
+                                      //     context, '/welcome_screen');
                                     },
                                   ),
                                 ],

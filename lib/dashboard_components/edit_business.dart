@@ -10,8 +10,8 @@ class EditBusiness extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: const AppbarBackButton(),
-        title: const AppbarTitle(
+        leading: const AppBarBackButton(),
+        title: const AppBarTitle(
           title: 'EditBusiness',
         ),
       ),
