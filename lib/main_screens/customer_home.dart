@@ -20,6 +20,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
     StoresScreen(),
     CartScreen(),
     ProfileScreen(),
+    
   ];
   @override
   Widget build(BuildContext context) {

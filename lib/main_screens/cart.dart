@@ -51,7 +51,8 @@ class CartScreen extends StatelessWidget {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const CustomerHomeScreen()),
+                            builder: (context) => 
+                            const CustomerHomeScreen()),
                       );
                     },
                     child: const Text(

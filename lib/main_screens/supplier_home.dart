@@ -3,7 +3,6 @@ import 'package:multi_store_app/main_screens/category.dart';
 import 'package:multi_store_app/main_screens/dashboard.dart';
 import 'package:multi_store_app/main_screens/home.dart';
 import 'package:multi_store_app/main_screens/stores.dart';
-import 'package:multi_store_app/main_screens/welcome_screen.dart';
 
 class SupplierHomeScreen extends StatefulWidget {
   const SupplierHomeScreen({Key? key}) : super(key: key);
