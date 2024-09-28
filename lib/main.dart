@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/auth/customer_signup.dart';
 import 'package:multi_store_app/main_screens/customer_home.dart';
 import 'package:multi_store_app/main_screens/supplier_home.dart';
 import 'package:multi_store_app/main_screens/welcome_screen.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: const WelcomeScreen(),
       initialRoute: '/welcome_screen',
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/welcome_screen': (contex) => const WelcomeScreen(),
         '/customer_home': (contex) => const CustomerHomeScreen(),
         '/supplier_home': (contex) => const SupplierHomeScreen(),
+        '/customer_signup': (contex) => const CustomerRegister(),
       },
     );
   }
