@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/widgets/auth_widgets.dart';
 
 class CustomerRegister extends StatefulWidget {
   const CustomerRegister({Key? key}) : super(key: key);
@@ -10,93 +11,132 @@ class CustomerRegister extends StatefulWidget {
 }
 
 class _CustomerRegisterState extends State<CustomerRegister> {
-  get fontWeight => null;
-
+  bool passwordVisible = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'Sign Up',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-              ),
-              IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/welcome_screen');
-                  },
-                  icon: const Icon(
-                    Icons.home_work,
-                    size: 40,
-                  ))
-            ],
-          ),
-          Row(
-            children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 40,
-                ),
-                child: CircleAvatar(
-                  radius: 60,
-                  backgroundColor: Colors.purpleAccent,
-                ),
-              ),
-              Column(
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            reverse: true,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
                 children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.purple,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            topRight: Radius.circular(15))),
-                    child: IconButton(
-                      icon: const Icon(
-                        Icons.camera_alt,
-                        color: Colors.white,
+                  const AuthHeaderLabel(
+                    headerLabel: 'Sign Up',
+                  ),
+                  Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 20,
+                          horizontal: 40,
+                        ),
+                        child: CircleAvatar(
+                          radius: 60,
+                          backgroundColor: Colors.purpleAccent,
+                        ),
                       ),
-                      onPressed: () {
-                        print('pick image from camera');
-                        // Open camera or file picker
-                      },
+                      Column(
+                        children: [
+                          Container(
+                            decoration: const BoxDecoration(
+                                color: Colors.purple,
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(15),
+                                    topRight: Radius.circular(15))),
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.camera_alt,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {
+                                print('pick image from camera');
+                                // Open camera or file picker
+                              },
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                                color: Colors.purple,
+                                borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(15),
+                                    bottomRight: Radius.circular(15))),
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.photo,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {
+                                print('pick image from gallary');
+                                // Open camera or file picker
+                              },
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: TextFormField(
+                      decoration: textFormDecoration.copyWith(
+                        labelText: 'Full Name',
+                        hintText: 'Enter your full name',
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 6,
-                  ),
-                  Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.purple,
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15))),
-                    child: IconButton(
-                      icon: const Icon(
-                        Icons.photo,
-                        color: Colors.white,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: textFormDecoration.copyWith(
+                        labelText: 'Email Address',
+                        hintText: 'Enter your email',
                       ),
-                      onPressed: () {
-                        print('pick image from gallary');
-                        // Open camera or file picker
-                      },
                     ),
-                  )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: TextFormField(
+                      obscureText: passwordVisible,
+                      decoration: textFormDecoration.copyWith(
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                passwordVisible = !passwordVisible;
+                              });
+                            },
+                            icon: Icon(
+                              passwordVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: Colors.purple,
+                            )),
+                        labelText: 'Password',
+                        hintText: 'Enter your password',
+                      ),
+                    ),
+                  ),
+                  HaveAccount(
+                    haveAccount: 'Already have an account? ',
+                    actionLabel: 'Log In',
+                    onPressed: () {},
+                  ),
+                  AuthMainButton(
+                    mainButtonLabel: 'Sign Up',
+                    onPressed: () {},
+                  ),
                 ],
-              )
-            ],
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: 'Full Name',
-              hintText: 'Enter your full name',
+              ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }
